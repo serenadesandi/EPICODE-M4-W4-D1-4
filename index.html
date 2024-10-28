@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Marketplace</h1>
+    <button onclick="window.location.href='backoffice.html'">Vai al Backoffice</button>
+    <div id="products-container"></div>
+
+    <div id="product-list"></div>
+
+    <!-- Form nascosto per modificare i prodotti -->
+    <form id="edit-product-form" style="display: none;">
+        <input type="hidden" id="edit-product-id"> <!-- Campo nascosto per l'ID del prodotto -->
+        <input type="text" id="edit-name" placeholder="Nome del prodotto" required>
+        <textarea id="edit-description" placeholder="Descrizione" required></textarea>
+        <input type="text" id="edit-brand" placeholder="Brand" required>
+        <input type="text" id="edit-imageUrl" placeholder="URL dell'immagine" required>
+        <input type="number" id="edit-price" placeholder="Prezzo" required>
+        <button type="button" onclick="updateProduct()">Salva Modifiche</button>
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+        // Carica tutti i prodotti all'avvio della pagina
+        document.addEventListener("DOMContentLoaded", loadProducts);
+    </script>
+</body>
+</html>

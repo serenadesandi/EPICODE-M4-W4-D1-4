@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Backoffice - Gestione Prodotti</h1>
+    <form id="product-form">
+        <input type="hidden" id="product-id"> <!-- Campo nascosto per l'ID del prodotto --> 
+        <input type="text" id="name" placeholder="Nome del prodotto" required>
+        <textarea id="description" placeholder="Descrizione" required></textarea>
+        <input type="text" id="brand" placeholder="Brand" required>
+        <input type="text" id="imageUrl" placeholder="URL dell'immagine" required>
+        <input type="number" id="price" placeholder="Prezzo" required>
+        <button onclick="addProduct()">Aggiungi Prodotto</button>
+        
+    </form>
+    <div id="backoffice-products-container"></div>
+
+    <button onclick="window.location.href='index.html'">Torna alla Home</button>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", loadBackofficeProducts);
+        document.getElementById("product-form").addEventListener("submit", handleProductFormSubmit);
+    </script>
+</body>
+</html>

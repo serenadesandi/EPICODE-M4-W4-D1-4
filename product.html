@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Prodotto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Dettagli Prodotto</h1>
+    <div id="product-details"></div>
+    <button onclick="window.location.href='index.html'">Torna alla Home</button>
+    
+     <!-- Pulsante per modificare il prodotto -->
+     <button id="edit-button" onclick="showEditTable()">Modifica il prodotto</button>
+
+
+
+     <!-- Tabella nascosta per modificare il prodotto -->
+     <table id="edit-table" style="display: none; margin-top: 20px;">
+         <tr>
+             <td>Nome:</td>
+             <td><input type="text" id="edit-name" /></td>
+         </tr>
+         <tr>
+             <td>Descrizione:</td>
+             <td><input type="text" id="edit-description" /></td>
+         </tr>
+         <tr>
+             <td>Brand:</td>
+             <td><input type="text" id="edit-brand" /></td>
+         </tr>
+         <tr>
+             <td>URL Immagine:</td>
+             <td><input type="text" id="edit-imageUrl" /></td>
+         </tr>
+         <tr>
+             <td>Prezzo:</td>
+             <td><input type="number" id="edit-price" /></td>
+         </tr>
+         <tr>
+             <td colspan="2">
+                 <button onclick="updateProduct()">Salva Modifiche</button>
+             </td>
+         </tr>
+     </table>
+
+    
+
+     
+
+
+    <script src="script.js"></script>
+    <script>
+        // Carica i dettagli del prodotto con l'ID specificato
+        document.addEventListener("DOMContentLoaded", loadProductDetails);
+    </script>
+</body>
+</html>
